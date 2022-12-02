@@ -11,7 +11,7 @@
         "reveal": "always",
         "focus": false,
         "panel": "dedicated",
-        "group": "groupA",
+        "group": "groupA"
       }
     },
     {
@@ -22,12 +22,16 @@
         "reveal": "always",
         "focus": false,
         "panel": "dedicated",
-        "group": "groupA",
-      },
+        "group": "groupA"
+      }
     },
     {
       "label": "run",
-      "dependsOn": ["watch css", "run server"]
+      "dependsOn": [
+        "watch css",
+        "run server"
+      ],
+      "problemMatcher": []
     }
   ]
 }
