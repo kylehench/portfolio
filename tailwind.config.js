@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./flask_app/templates/**/*.{html,js}"],
+  content: ["./flask_app/templates/**/*.{html,js}", "./flask_app/static/js/*.js"],
   theme: {
     screens: {
       sm: '480px',
@@ -16,6 +16,7 @@ module.exports = {
         brown: '#6F4849',
       },
     },
+    safelist: ['scrolled', 'hidden'],
   },
   plugins: [],
 }
