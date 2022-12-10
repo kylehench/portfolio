@@ -2,6 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: inter;
+  src: url('../../font/Inter-Regular.ttf');
+}
+
+@font-face {
+  font-family: dm;
+  src: url('../../font/DMSerifDisplay-Regular.ttf');
+}
+
+* {
+  font-family: inter;
+}
+
 h2 {
   @apply text-2xl text-blue
+}
+
+h3 {
+  @apply text-lg text-blue
 }

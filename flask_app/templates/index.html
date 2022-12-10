@@ -10,17 +10,17 @@
 </head>
 <body>
   <!-- navbar -->
-  <nav class="sticky top-0 px-4 pt-4 bg-white bg-opacity-25 backdrop-blur-sm">
+  <nav class="container sticky top-0 px-4 py-4 mx-auto border-b-2 border-white bg-white bg-opacity-25 backdrop-blur-sm">
     <!-- flex container -->
-    <div class="container mx-auto flex items-center justify-between">
+    <div class="mx-auto flex items-center justify-between">
       <div>
         <div class="text-3xl">Kyle Hench</div>
       </div>
       <!-- menu items -->
-      {% set pages = ['About','Projects','Experience','Contact'] %}
+      {% set pages = ({'About':'','Projects':'projects','Experience':'experience','Contact':'contact'}) %}
       <div class="flex space-x-6">
         {% for page in pages %}
-        <a href="/#{{page.lower()}}" class="font-medium hover:text-orange hover:underline hover:underline-offset-8 hover:decoration-2 hover:decoration-orange">
+        <a href="/#{{pages[page]}}" class="font-medium hover:text-orange hover:underline hover:underline-offset-8 hover:decoration-2 hover:decoration-orange">
           {% if page_current==page %}
           <b class="underline underline-offset-8 decoration-2 decoration-orange">{{page}}</b>
           {% else %}
@@ -35,17 +35,23 @@
   {% set page_current = 'About' %}
   
   <div class="container mx-auto">
-    <div class="text-xl pt-2">Full Stack Software Engineer</div>
+    <div class="text-xl px-4 pb-2">Full Stack Software Engineer</div>
   </div>
-  <div class="h-40 w-full my-4 bg-[url('../../img/twin-peaks-sf-ca-horizontal.jpg')] bg-center">
+  <div class="h-40 w-full xl:bg-cover mx-auto my-4 bg-[url('../../img/twin-peaks-sf-ca-horizontal.jpg')] bg-center">
     <!-- <div class="container mx-auto p-4 pt-16">
       <div class="text-6xl text-white">About</div>
     </div> -->
   </div>
-  <div class="container mx-auto space-y-6">
+  <div class="container px-4 mx-auto space-y-6">
     <div id="about">
       <h2>About</h2>
-      <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur ex, eum iusto numquam enim nemo asperiores expedita eaque! Autem nulla ipsum nemo magni a numquam tenetur odit est error impedit! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt hic est officiis distinctio quia eius dicta quas culpa, voluptas nostrum laboriosam magnam quaerat, beatae magni saepe velit rem modi eos. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt hic est officiis distinctio quia eius dicta quas culpa, voluptas nostrum laboriosam magnam quaerat, beatae magni saepe velit rem modi eos. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt hic est officiis distinctio quia eius dicta quas culpa, voluptas nostrum laboriosam magnam quaerat, beatae magni saepe velit rem modi eos. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt hic est officiis distinctio quia eius dicta quas culpa, voluptas nostrum laboriosam magnam quaerat, beatae magni saepe velit rem modi eos. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt hic est officiis distinctio quia eius dicta quas culpa, voluptas nostrum laboriosam magnam quaerat, beatae magni saepe velit rem modi eos. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt hic est officiis distinctio quia eius dicta quas culpa, voluptas nostrum laboriosam magnam quaerat, beatae magni saepe velit rem modi eos. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt hic est officiis distinctio quia eius dicta quas culpa, voluptas nostrum laboriosam magnam quaerat, beatae magni saepe velit rem modi eos. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt hic est officiis distinctio quia eius dicta quas culpa, voluptas nostrum laboriosam magnam quaerat, beatae magni saepe velit rem modi eos. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt hic est officiis distinctio quia eius dicta quas culpa, voluptas nostrum laboriosam magnam quaerat, beatae magni saepe velit rem modi eos. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt hic est officiis distinctio quia eius dicta quas culpa, voluptas nostrum laboriosam magnam quaerat, beatae magni saepe velit rem modi eos. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt hic est officiis distinctio quia eius dicta quas culpa, voluptas nostrum laboriosam magnam quaerat, beatae magni saepe velit rem modi eos. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt hic est officiis distinctio quia eius dicta quas culpa, voluptas nostrum laboriosam magnam quaerat, beatae magni saepe velit rem modi eos. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt hic est officiis distinctio quia eius dicta quas culpa, voluptas nostrum laboriosam magnam quaerat, beatae magni saepe velit rem modi eos. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt hic est officiis distinctio quia eius dicta quas culpa, voluptas nostrum laboriosam magnam quaerat, beatae magni saepe velit rem modi eos. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt hic est officiis distinctio quia eius dicta quas culpa, voluptas nostrum laboriosam magnam quaerat, beatae magni saepe velit rem modi eos. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt hic est officiis distinctio quia eius dicta quas culpa, voluptas nostrum laboriosam magnam quaerat, beatae magni saepe velit rem modi eos. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit obcaecati qui harum officiis exercitationem quia, voluptas excepturi ullam deserunt sed fugiat molestias consectetur voluptatum asperiores veniam tenetur fuga perspiciatis corrupti! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit obcaecati qui harum officiis exercitationem quia, voluptas excepturi ullam deserunt sed fugiat molestias consectetur voluptatum asperiores veniam tenetur fuga perspiciatis corrupti! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit obcaecati qui harum officiis exercitationem quia, voluptas excepturi ullam deserunt sed fugiat molestias consectetur voluptatum asperiores veniam tenetur fuga perspiciatis corrupti! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit obcaecati qui harum officiis exercitationem quia, voluptas excepturi ullam deserunt sed fugiat molestias consectetur voluptatum asperiores veniam tenetur fuga perspiciatis corrupti! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit obcaecati qui harum officiis exercitationem quia, voluptas excepturi ullam deserunt sed fugiat molestias consectetur voluptatum asperiores veniam tenetur fuga perspiciatis corrupti! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit obcaecati qui harum officiis exercitationem quia, voluptas excepturi ullam deserunt sed fugiat molestias consectetur voluptatum asperiores veniam tenetur fuga perspiciatis corrupti! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit obcaecati qui harum officiis exercitationem quia, voluptas excepturi ullam deserunt sed fugiat molestias consectetur voluptatum asperiores veniam tenetur fuga perspiciatis corrupti! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit obcaecati qui harum officiis exercitationem quia, voluptas excepturi ullam deserunt sed fugiat molestias consectetur voluptatum asperiores veniam tenetur fuga perspiciatis corrupti! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit obcaecati qui harum officiis exercitationem quia, voluptas excepturi ullam deserunt sed fugiat molestias consectetur voluptatum asperiores veniam tenetur fuga perspiciatis corrupti! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit obcaecati qui harum officiis exercitationem quia, voluptas excepturi ullam deserunt sed fugiat molestias consectetur voluptatum asperiores veniam tenetur fuga perspiciatis corrupti! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit obcaecati qui harum officiis exercitationem quia, voluptas excepturi ullam deserunt sed fugiat molestias consectetur voluptatum asperiores veniam tenetur fuga perspiciatis corrupti! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit obcaecati qui harum officiis exercitationem quia, voluptas excepturi ullam deserunt sed fugiat molestias consectetur voluptatum asperiores veniam tenetur fuga perspiciatis corrupti! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit obcaecati qui harum officiis exercitationem quia, voluptas excepturi ullam deserunt sed fugiat molestias consectetur voluptatum asperiores veniam tenetur fuga perspiciatis corrupti! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit obcaecati qui harum officiis exercitationem quia, voluptas excepturi ullam deserunt sed fugiat molestias consectetur voluptatum asperiores veniam tenetur fuga perspiciatis corrupti!</div>
+      <div class="lg:flex">
+        <div class="flex-1">Full stack software developer with over 4 years of experience creating customized tools to process and analyze data in analytical chemistry labs. Proactive and diligent professional who enjoys creating innovative solutions to today’s technical problems, pursuing value-adding opportunities, and learning new technologies.</div>
+        <div class="flex-2">
+          <h3>Technical Skills</h3>
+          <div>k software developer with over 4 years of experience creating customized tools to process and</div>
+        </div>
+      </div>
     </div>
     
     <div id="projects">
