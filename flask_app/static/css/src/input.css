@@ -21,7 +21,7 @@ h2 {
 } 
 
 h3 {
-  @apply text-lg text-blue mt-8 text-center md:text-left
+  @apply text-xl text-blue mt-8 text-center md:text-left
 }
 
 .container {
@@ -34,4 +34,42 @@ h3 {
 
 .navigation-helper {
   @apply relative top-[-90px]
+}
+
+/* Hambuger Menu */
+
+.hamburger {
+  @apply w-6 h-6 relative;
+  transition: all 0.25s;
+}
+
+.hamburger-top, .hamburger-middle, .hamburger-bottom {
+  @apply absolute top-0 left-0 w-6 h-0.5 bg-black;
+  transform: rotate(0);
+  transition: all 0.5s;
+}
+
+.hamburger-middle {
+  transform: translateY(7px)
+}
+
+.hamburger-bottom {
+  transform: translateY(14px)
+}
+
+.open {
+  transform: rotate(90deg);
+  transform: translateY(0px);
+}
+
+.open .hamburger-top {
+  transform: rotate(45deg) translateY(6px) translate(6px);
+}
+
+.open .hamburger-middle {
+  display: none;
+}
+
+.open .hamburger-bottom {
+  transform: rotate(-45deg) translateY(6px) translate(-6px);
 }
