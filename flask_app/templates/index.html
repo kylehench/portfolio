@@ -6,18 +6,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="refresh" content="3" >
   <link rel="stylesheet" href="{{ url_for('static', filename='css/dist/output.css') }}">
-  <title>Kyle Hench</title>
+  <title>Kyle Hench - Profile</title>
 </head>
 <body>
   <!-- navbar -->
-  <nav class="container sticky top-0 px-4 py-4 mx-auto border-b-2 border-white bg-white bg-opacity-25 backdrop-blur-sm">
+  <nav class="sticky top-0 border-b-2 border-white bg-white bg-opacity-25 backdrop-blur-sm">
     <!-- flex container -->
-    <div class="mx-auto flex items-center justify-between">
+    <div class="container mx-auto px-8 py-4 flex items-center justify-between">
       <div>
         <div class="text-3xl">Kyle Hench</div>
       </div>
       <!-- menu items -->
-      {% set pages = ({'About':'','Projects':'projects','Experience':'experience','Contact':'contact'}) %}
+      {% set pages = ({'About':'about','Projects':'projects','Experience':'experience','Contact':'contact'}) %}
       <div class="flex space-x-6">
         {% for page in pages %}
         <a href="/#{{pages[page]}}" class="font-medium hover:text-orange hover:underline hover:underline-offset-8 hover:decoration-2 hover:decoration-orange">
@@ -35,28 +35,158 @@
   {% set page_current = 'About' %}
   
   <div class="container mx-auto">
-    <div class="text-xl px-4 pb-2">Full Stack Software Engineer</div>
+    <div class="text-xl px-8 pb-2">Full Stack Software Engineer</div>
   </div>
   <div class="h-40 w-full xl:bg-cover mx-auto my-4 bg-[url('../../img/twin-peaks-sf-ca-horizontal.jpg')] bg-center">
     <!-- <div class="container mx-auto p-4 pt-16">
       <div class="text-6xl text-white">About</div>
     </div> -->
   </div>
-  <div class="container px-4 mx-auto space-y-6">
-    <div id="about">
-      <h2>About</h2>
-      <div class="lg:flex">
-        <div class="flex-1">Full stack software developer with over 4 years of experience creating customized tools to process and analyze data in analytical chemistry labs. Proactive and diligent professional who enjoys creating innovative solutions to today’s technical problems, pursuing value-adding opportunities, and learning new technologies.</div>
-        <div class="flex-2">
-          <h3>Technical Skills</h3>
-          <div>k software developer with over 4 years of experience creating customized tools to process and</div>
+  
+  <!-- main content -->
+  <div class="container px-8 mx-auto space-y-12">
+    <div id="about" class="navigation-helper"></div>
+    <h2>About</h2>
+    <div class="mt-4 md:flex items-center">
+      <img class="w-48 mx-auto rounded-full" src="../static/img/profile-alamere-falls.jpg" alt="profile picture">
+        <div class="my-4 max-w-48 text-lg text-center md:text-left md:px-8 md:ml-8">
+          Full stack software engineer with over 4 years of experience creating customized tools to process and analyze data in analytical chemistry labs. Proactive and diligent professional who enjoys creating innovative solutions to today’s technical problems, pursuing value-adding opportunities, and learning new technologies. Currently based in Sunnyvale, CA.
+          <div class="w-2/5 h-0.5 mt-2 bg-blue invisible md:visible"></div>
+        </div>
+    </div>
+    <div>
+      <h3>Technical Skills</h3>
+      <div class="mt-2 grid grid-cols-1 gap-4 lg:grid-cols-2">
+        <div class="p-5 rounded-xl bg-gray-200">
+          <div class="flex flex-wrap">
+            <img class="h-14 p-2" src="../static/img/logos/python.png" alt="">
+            <img class="h-14 p-2" src="../static/img/logos/js.png" alt="">
+            <img class="h-14 p-2" src="../static/img/logos/java.png" alt="">
+            <img class="h-14 p-2" src="../static/img/logos/sql.png" alt="">
+            <img class="h-14 p-2" src="../static/img/logos/html.png" alt="">
+            <img class="h-14 p-2" src="../static/img/logos/css.png" alt="">
+          </div>
+          <div class="w-20 h-0.5 mt-4 bg-blue"></div>
+          <div class="mt-2"><b class="text-blue text-xl">Languages</b> - Python, JavaScript, Java, SQL, HTML, CSS</div>
+        </div>
+
+        <div class="p-5 rounded-xl bg-gray-200">
+          <div class="flex flex-wrap">
+            <img class="h-14 p-2" src="../static/img/logos/react.png" alt="">
+            <img class="h-14 p-2" src="../static/img/logos/express.png" alt="">
+            <img class="h-14 p-2" src="../static/img/logos/flask.png" alt="">
+            <img class="h-14 p-2" src="../static/img/logos/spring.png" alt="">
+            <img class="h-14 p-2" src="../static/img/logos/tailwind.png" alt="">
+            <img class="h-14 p-2" src="../static/img/logos/bootstrap.png" alt="">
+          </div>
+          <div class="w-20 h-0.5 mt-4 bg-blue"></div>
+          <div class="mt-2"><b class="text-blue text-xl">Frameworks and Libraries</b> - React, Express, Flask, Spring, Tailwind CSS, Bootstrap</div>
+        </div>
+        
+        <div class="p-5 rounded-xl bg-gray-200">
+          <div class="flex flex-wrap">
+            <img class="h-14 p-2" src="../static/img/logos/mysql.png" alt="">
+            <img class="h-14 p-2" src="../static/img/logos/mongodb.png" alt="">
+          </div>
+          <div class="w-20 h-0.5 mt-4 bg-blue"></div>
+          <div class="mt-2"><b class="text-blue text-xl">Databases</b>- MySQL, MongoDB</div>
+        </div>
+
+        <div class="p-5 rounded-xl bg-gray-200">
+          <div class="flex flex-wrap">
+            <img class="h-14 p-2" src="../static/img/logos/ec2.png" alt="">
+            <img class="h-14 p-2" src="../static/img/logos/linux.png" alt="">
+            <img class="h-14 p-2" src="../static/img/logos/git.png" alt="">
+            <img class="h-14 p-2" src="../static/img/logos/nodejs.png" alt="">
+            <img class="h-14 p-2" src="../static/img/logos/numpy.png" alt="">
+            <img class="h-14 p-2" src="../static/img/logos/pandas.png" alt="">
+          </div>
+          <div class="w-20 h-0.5 mt-4 bg-blue"></div>
+          <div class="mt-2"><b class="text-blue text-xl">Tools</b> - AWS EC2, Linux, Git, Node, REST APIs, AJAX, OOP, NumPy, Pandas, GUI Automation</div>
         </div>
       </div>
+
+      <h3>Assessment Highlight</h3>
+      <div class="text-center md:text-left">Scored <a class="font-semibold text-blue" href="https://app.codesignal.com/coding-report/gvf2GvtXHmaqieYoX-YjdtACBMZocP8diZPEM4BWkJ?accessToken=gvf2GvtXHmaqieYoX-FPY8ZqRn9uFRtha6ow5yuGMu" target="_blank" rel="noopener noreferrer">838/850</a> on proctored Codesignal assessment</div>
     </div>
     
-    <div id="projects">
+    <div>
+      <div id="projects" class="navigation-helper"></div>
       <h2>Projects</h2>
       <div>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit obcaecati qui harum officiis exercitationem quia, voluptas excepturi ullam deserunt sed fugiat molestias consectetur voluptatum asperiores veniam tenetur fuga perspiciatis corrupti! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit obcaecati qui harum officiis exercitationem quia, voluptas excepturi ullam deserunt sed fugiat molestias consectetur voluptatum asperiores veniam tenetur fuga perspiciatis corrupti! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit obcaecati qui harum officiis exercitationem quia, voluptas excepturi ullam deserunt sed fugiat molestias consectetur voluptatum asperiores veniam tenetur fuga perspiciatis corrupti! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit obcaecati qui harum officiis exercitationem quia, voluptas excepturi ullam deserunt sed fugiat molestias consectetur voluptatum asperiores veniam tenetur fuga perspiciatis corrupti! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit obcaecati qui harum officiis exercitationem quia, voluptas excepturi ullam deserunt sed fugiat molestias consectetur voluptatum asperiores veniam tenetur fuga perspiciatis corrupti!</div>
+    </div>
+
+    <div>
+      <div id="experience" class="navigation-helper"></div>
+      <h2>Experience and Education</h2>
+        <h3>Professional Experience</h3>
+        <div class="flex">
+          <img class="h-16 p-2" src="../static/img/chevron.png" alt="">
+          <div class="ml-2 flex justify-between w-full flex-wrap items-center">
+            <div class="mr-8">
+              <div class="font-semibold">R&D Laboratory Technician</div>
+              <div class="italic">Chevron Energy Technology Company</div>
+            </div>
+            <div class="text-left md:text-right">Jun 2016 - Nov 2021<br>Richmond, CA</div>
+          </div>
+        </div>
+        <div class="mt-2 md:flex md:space-x-5">
+          <ul class="pl-8 space-y-3 list-disc">
+            <li>Co-authored <span class="emphasize">8 peer-reviewed papers</span> in leading energy journals (including Fuel and Energy and Fuels), <span class="emphasize">2 book chapters</span>, and <span class="emphasize">1 patent</span>.</li>
+            <li>Developed a user-friendly <span class="emphasize">Python/Excel VBA application that analyzes three-dimensional instrument data</span> to rapidly determine the hydrocarbon content of soils for environmental remediation projects.</li>
+            <li>Performed fuel oil testing supporting the development of a very low sulfur fuel oil that captured an estimated <span class="emphasize">~$45MM enterprise gross margin improvement</span> in 2020, and co-authored its patent.</li>
+          </ul>
+          <ul class="mt-3 pl-8 space-y-3 list-disc md:mt-0">
+            <li>Created various utilities supplementing laboratory software and data workflows that <span class="emphasize">increased data quality, reduced reporting time, and saved hundreds of hours of analysis time per year</span> (Python, NumPy, Pandas, PyAutoGUI, VBA, Tkinter).</li>
+            <li>Implemented an image-matching algorithm ~20x faster than PyAutoGUI’s method.</li>
+            <li>Participated in <span class="emphasize">two cross-functional data science teams</span> as the primary programmer, results were published in two Energy and Fuels papers.</li>
+          </ul>
+        </div>
+        <h3>Education</h3>
+        <div class="flex">
+          <img class="h-16 p-2" src="../static/img/dojo.png" alt="">
+          <div class="ml-2 flex justify-between w-full flex-wrap items-center">
+            <div class="mr-8">
+              <div class="font-semibold">Full-Stack Web Development Certificate</div>
+              <div class="italic">Coding Dojo</div>
+            </div>
+            <div class="text-left md:text-right">Nov 2021 - Aug 2022<br>Sunnyvale, CA</div>
+          </div>
+        </div>
+        <div class="mt-1 ml-2">Graduated with honors in Python, Java, and MERN full-stack programs.</div>
+        <div class="mt-5 flex">
+          <img class="h-16 p-2" src="../static/img/uc-berkeley.png" alt="">
+          <div class="ml-2 flex justify-between w-full flex-wrap items-center">
+            <div class="mr-8">
+              <div class="font-semibold">Bachelor’s in Chemical Biology</div>
+              <div class="italic">University of California, Berkeley</div>
+            </div>
+            <div class="text-left md:text-right">2012-2016<br>Berkeley, CA</div>
+          </div>
+        </div>
+    </div>
+
+    <div class="pb-8">
+      <div id="contact" class="navigation-helper"></div>
+      <h2>Contact</h2>
+      <div class="grid md:grid-cols-2">
+        <div class="my-2 flex items-center">
+          <img class="h-10" src="../static/img/icons/mail.svg" alt="">
+          <a class="ml-4 text-xl font-bold text-blue underline" href="mailto:kylehench@gmail.com">kylehench@gmail.com</a>
+        </div>
+        <div class="my-2 flex items-center">
+          <img class="h-10" src="../static/img/icons/phone.svg" alt="">
+          <a class="ml-4 text-xl font-bold text-blue underline" href="tel:+19492924461">949-292-4461</a>
+        </div>
+        <div class="my-2 flex items-center">
+          <img class="h-10" src="../static/img/icons/linkedin.svg" alt="">
+          <a class="ml-4 text-xl font-bold text-blue underline" href="https://www.linkedin.com/in/kylehench/">LinkedIn</a>
+        </div>
+        <div class="my-2 flex items-center">
+          <img class="h-10" src="../static/img/icons/github.svg" alt="">
+          <a class="ml-4 text-xl font-bold text-blue underline" href="https://github.com/kylehench">Github</a>
+        </div>
+      </div>
     </div>
   </div>
   <script src="{{ url_for('static', filename='js/script.js') }}"></script>

@@ -1,5 +1,5 @@
 const nav = document.querySelector('nav');
-const classesScrollToggle = ['border-gray-400']
+const classesScrollToggle = ['border-gray-300']
 
 window.onscroll = () => {
   if (this.scrollY <= 10) {
