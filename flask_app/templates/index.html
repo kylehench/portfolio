@@ -116,8 +116,60 @@
     
     <div>
       <div id="projects" class="navigation-helper"></div>
+      {% set projects = [{'title': 'Mazique',
+                          'desc_short': 'Web app for writing sheet music',
+                          'tool_logos': ['mongodb','express','react','nodejs','js','html','css','bootstrap','ec2','linux'],
+                          'desc_long': ['Used the MERN stack to create a highly responsive web app for viewing and editing sheet music.','Defined JSON structure for song data inspired by the MusicXML specification.','Created a layout engine that generates and places each symbol in an SVG document.','Wrote a reducer function for processing all edits made to the music.'],
+                          'img_name': 'mazique',
+                          'github_link': 'https://github.com/kylehench/mazique',
+                          'deployment_link': 'https://www.kylehench.com/mazique'},
+                         {'title': 'Recipes',
+                          'desc_short': 'A Flask web app for users to store recipes',
+                          'tool_logos': ['python','sql','flask','mysql','bootstrap','ec2','linux'],
+                          'desc_long': ['Implemented user login/authentication with custom validations, password hashing with bcrypt, and session persistence with Flask session.','Stored recipes in MySQL database enabling association of users and allowing edit permission based on ownership.','Utilized MVC pattern to organize code and separate concerns.'],
+                          'img_name': '',
+                          'github_link': 'https://github.com/kylehench/recipes',
+                          'deployment_link': ''}] %}
       <h2>Projects</h2>
-      <div>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit obcaecati qui harum officiis exercitationem quia, voluptas excepturi ullam deserunt sed fugiat molestias consectetur voluptatum asperiores veniam tenetur fuga perspiciatis corrupti! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit obcaecati qui harum officiis exercitationem quia, voluptas excepturi ullam deserunt sed fugiat molestias consectetur voluptatum asperiores veniam tenetur fuga perspiciatis corrupti! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit obcaecati qui harum officiis exercitationem quia, voluptas excepturi ullam deserunt sed fugiat molestias consectetur voluptatum asperiores veniam tenetur fuga perspiciatis corrupti! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit obcaecati qui harum officiis exercitationem quia, voluptas excepturi ullam deserunt sed fugiat molestias consectetur voluptatum asperiores veniam tenetur fuga perspiciatis corrupti! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit obcaecati qui harum officiis exercitationem quia, voluptas excepturi ullam deserunt sed fugiat molestias consectetur voluptatum asperiores veniam tenetur fuga perspiciatis corrupti!</div>
+      {% for project in projects %}
+        <div class="flex items-end justify-between">
+          <h3>{{project.title}}</h3>
+          <div class="flex items-center">
+            <img class="h-6" src="../static/img/icons/code.svg" alt="">
+            <a class="ml-2 font-semibold text-blue" href="{{project.github_link}}" target="_blank" rel="noopener noreferrer">Source</a>
+            {% if project.deployment_link %}
+              <span class="mx-3">|</span>
+              <img class="h-5" src="../static/img/icons/window.svg" alt="">
+              <a class="ml-2 font-semibold text-blue" href="{{project.deployment_link}}" target="_blank" rel="noopener noreferrer">Demo</a>
+            {% endif %}
+
+          </div>
+        </div>
+        {% if project.img_name %}
+          <div class="mt-3 border bg-gray-300 border-gray-300 rounded">
+            <div class="h-5 pl-3 flex items-center space-x-2">
+              <div class="h-2 w-2 rounded bg-red"></div>
+              <div class="h-2 w-2 rounded bg-yellow"></div>
+              <div class="h-2 w-2 rounded bg-green"></div>
+            </div>
+            <img class="p-[1px]" src="../static/img/apps/{{project.img_name}}.png" alt="">
+          </div>
+        {% endif %}
+        <div class="my-2 flex flex-wrap items-center justify-between">
+          <div class="italic">{{project.desc_short}}</div>
+          <div class="flex">
+            {% for tool_logo in project.tool_logos %}
+              <img class="h-8 p-1 grayscale-[25%]" src="../static/img/logos/{{tool_logo}}.png" alt="">
+            {% endfor %}
+          </div>
+        </div>
+        <div class="w-2/3 h-0.5 my-3 bg-blue"></div>
+        <ul class="ml-8 list-disc">
+          {% for list_item in project.desc_long %}
+            <li>{{list_item}}</li>
+          {% endfor %}
+        </ul>
+      {% endfor %}
     </div>
 
     <div>
@@ -173,10 +225,10 @@
     <div class="pb-8">
       <div id="contact" class="navigation-helper"></div>
       <h2>Contact</h2>
-      <div class="grid md:grid-cols-2">
+      <div class="grid md:grid-cols-2 mt-4 ml-4">
         <div class="my-2 flex items-center">
           <img class="h-10" src="../static/img/icons/mail.svg" alt="">
-          <a class="ml-4 text-xl font-bold text-blue underline" href="mailto:kylehench@gmail.com">kylehench@gmail.com</a>
+          <a class="ml-4 text-xl font-bold text-blue underline" href="mailto:hello@kylehench.com">hello@kylehench.com</a>
         </div>
         <div class="my-2 flex items-center">
           <img class="h-10" src="../static/img/icons/phone.svg" alt="">

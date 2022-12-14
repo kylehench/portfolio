@@ -21,7 +21,7 @@ h2 {
 } 
 
 h3 {
-  @apply text-xl text-blue mt-8 text-center md:text-left
+  @apply text-2xl text-blue mt-8 text-center md:text-left
 }
 
 .container {
