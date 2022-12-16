@@ -17,11 +17,11 @@
 }
 
 h2 {
-  @apply mt-20 text-4xl text-blue text-center md:text-left
+  @apply mt-20 mr-4 text-4xl text-blue text-center md:text-left
 }
 
 h3 {
-  @apply mt-12 text-2xl text-blue text-center md:text-left
+  @apply mt-12 mr-4 text-2xl text-blue text-center md:text-left
 }
 
 .text-white-shadow {

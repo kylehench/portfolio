@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- <meta http-equiv="refresh" content="3" > -->
   <link rel="stylesheet" href="{{ url_for('static', filename='css/dist/output.css') }}">
+  <link rel="shortcut icon" href="{{ url_for('static', filename='img/icons/code.svg') }}">
   <title>Kyle Hench - Profile</title>
 </head>
 <body>
@@ -132,7 +133,7 @@
                           'deployment_link': ''}] %}
       <h2>Projects</h2>
       {% for project in projects %}
-        <div class="flex items-end justify-between">
+        <div class="flex items-end justify-between flex-wrap">
           {% if loop.index==1 %}
           <h3 class="mt-6">{{project.title}}</h3>
           {% else %}
@@ -144,7 +145,7 @@
             {% if project.deployment_link %}
               <span class="mx-3">|</span>
               <img class="h-5" src="./static/img/icons/window.svg" alt="">
-              <a class="ml-2 font-semibold text-blue" href="{{project.deployment_link}}" target="_blank" rel="noopener noreferrer">Demo</a>
+              <a class="ml-2 font-semibold text-blue" href="{{project.deployment_link}}" target="_blank" rel="noopener noreferrer">Deployment</a>
             {% endif %}
 
           </div>
@@ -161,7 +162,7 @@
         {% endif %}
         <div class="my-2 flex flex-wrap items-center justify-between">
           <div class="italic">{{project.desc_short}}</div>
-          <div class="flex">
+          <div class="flex flex-wrap">
             {% for tool_logo in project.tool_logos %}
               <img class="h-8 p-1" src="./static/img/logos/{{tool_logo}}.png" alt="">
             {% endfor %}
