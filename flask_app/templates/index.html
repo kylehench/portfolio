@@ -13,7 +13,7 @@
   <!-- navbar -->
   <nav class="sticky top-0 border-b-2 border-white bg-white bg-opacity-50 backdrop-blur-sm transition-colors duration-300">
     <!-- flex container -->
-    <div class="container mx-auto px-8 py-4 flex items-center justify-between">
+    <div class="container mx-auto px-8 py-2 md:py-4 flex items-center justify-between">
       <div class="text-3xl">Kyle Hench</div>
       <div>
         <!-- menu items -->
@@ -61,54 +61,24 @@
     </div>
     <div>
       <h3>Technical Skills</h3>
+      {% set tech_skills = [
+        {'title':'Languages','desc':'Python, JavaScript, Java, SQL, HTML, CSS','logos':['python','js','java','sql','html','css']},
+        {'title':'Frameworks and Libraries','desc':'React, Express, Flask, Spring, Tailwind CSS, Bootstrap','logos':['react','express','flask','spring','tailwind','bootstrap',]},
+        {'title':'Databases','desc':'MySQL, MongoDB','logos':['mysql','mongodb']},
+        {'title':'Tools','desc':'AWS EC2, Linux, Git, Node, REST APIs, AJAX, OOP, NumPy, Pandas, GUI Automation','logos':['ec2','linux','git','nodejs','numpy','pandas']},
+      ] %}
       <div class="mt-2 grid grid-cols-1 gap-4 lg:grid-cols-2">
+        {% for skill in tech_skills %}
         <div class="p-5 rounded-xl bg-gray-200">
           <div class="flex flex-wrap">
-            <img class="h-14 p-2" src="./static/img/logos/python.png" alt="">
-            <img class="h-14 p-2" src="./static/img/logos/js.png" alt="">
-            <img class="h-14 p-2" src="./static/img/logos/java.png" alt="">
-            <img class="h-14 p-2" src="./static/img/logos/sql.png" alt="">
-            <img class="h-14 p-2" src="./static/img/logos/html.png" alt="">
-            <img class="h-14 p-2" src="./static/img/logos/css.png" alt="">
+            {% for logo in skill.logos %}
+            <img class="h-12 p-2 md:h-14" src="./static/img/logos/{{logo}}.png" alt="">
+            {% endfor %}
           </div>
           <div class="w-20 h-0.5 mt-4 bg-blue"></div>
-          <div class="mt-2"><b class="text-blue text-xl">Languages</b> - Python, JavaScript, Java, SQL, HTML, CSS</div>
+          <div class="mt-2"><b class="text-blue text-xl">{{skill.title}}</b> - {{skill.desc}}</div>
         </div>
-
-        <div class="p-5 rounded-xl bg-gray-200">
-          <div class="flex flex-wrap">
-            <img class="h-14 p-2" src="./static/img/logos/react.png" alt="">
-            <img class="h-14 p-2" src="./static/img/logos/express.png" alt="">
-            <img class="h-14 p-2" src="./static/img/logos/flask.png" alt="">
-            <img class="h-14 p-2" src="./static/img/logos/spring.png" alt="">
-            <img class="h-14 p-2" src="./static/img/logos/tailwind.png" alt="">
-            <img class="h-14 p-2" src="./static/img/logos/bootstrap.png" alt="">
-          </div>
-          <div class="w-20 h-0.5 mt-4 bg-blue"></div>
-          <div class="mt-2"><b class="text-blue text-xl">Frameworks and Libraries</b> - React, Express, Flask, Spring, Tailwind CSS, Bootstrap</div>
-        </div>
-        
-        <div class="p-5 rounded-xl bg-gray-200">
-          <div class="flex flex-wrap">
-            <img class="h-14 p-2" src="./static/img/logos/mysql.png" alt="">
-            <img class="h-14 p-2" src="./static/img/logos/mongodb.png" alt="">
-          </div>
-          <div class="w-20 h-0.5 mt-4 bg-blue"></div>
-          <div class="mt-2"><b class="text-blue text-xl">Databases</b>- MySQL, MongoDB</div>
-        </div>
-
-        <div class="p-5 rounded-xl bg-gray-200">
-          <div class="flex flex-wrap">
-            <img class="h-14 p-2" src="./static/img/logos/ec2.png" alt="">
-            <img class="h-14 p-2" src="./static/img/logos/linux.png" alt="">
-            <img class="h-14 p-2" src="./static/img/logos/git.png" alt="">
-            <img class="h-14 p-2" src="./static/img/logos/nodejs.png" alt="">
-            <img class="h-14 p-2" src="./static/img/logos/numpy.png" alt="">
-            <img class="h-14 p-2" src="./static/img/logos/pandas.png" alt="">
-          </div>
-          <div class="w-20 h-0.5 mt-4 bg-blue"></div>
-          <div class="mt-2"><b class="text-blue text-xl">Tools</b> - AWS EC2, Linux, Git, Node, REST APIs, AJAX, OOP, NumPy, Pandas, GUI Automation</div>
-        </div>
+        {% endfor %}
       </div>
 
       <h3>Assessment Highlight</h3>
@@ -147,7 +117,6 @@
               <img class="h-5" src="./static/img/icons/window.svg" alt="">
               <a class="ml-2 font-semibold text-blue" href="{{project.deployment_link}}" target="_blank" rel="noopener noreferrer">Deployment</a>
             {% endif %}
-
           </div>
         </div>
         {% if project.img_name %}
