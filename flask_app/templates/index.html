@@ -63,7 +63,7 @@
       <h3>Technical Skills</h3>
       {% set tech_skills = [
         {'title':'Languages','desc':'Python, JavaScript, Java, SQL, HTML, CSS','logos':['python','js','java','sql','html','css']},
-        {'title':'Frameworks and Libraries','desc':'React, Express, Flask, Spring, Tailwind CSS, Bootstrap','logos':['react','express','flask','spring','tailwind','bootstrap',]},
+        {'title':'Frameworks and Libraries','desc':'React, Express, Flask, SQLAlchemy, Spring, Tailwind CSS, Bootstrap','logos':['react','express','flask','sqlalchemy','spring','tailwind','bootstrap',]},
         {'title':'Databases','desc':'MySQL, MongoDB','logos':['mysql','mongodb']},
         {'title':'Tools','desc':'AWS EC2, Linux, Git, Node, REST APIs, AJAX, OOP, NumPy, Pandas, GUI Automation','logos':['ec2','linux','git','nodejs','numpy','pandas']},
       ] %}
@@ -87,27 +87,48 @@
     
     <div>
       <div id="projects" class="navigation-helper"></div>
-      {% set projects = [{'title': 'Mazique',
-                          'desc_short': 'Web app for writing sheet music',
-                          'tool_logos': ['mongodb','express','react','nodejs','js','html','css','bootstrap','ec2','linux'],
-                          'desc_long': ['Used the MERN stack to create a highly responsive web app for viewing and editing sheet music.','Defined JSON structure for song data inspired by the MusicXML specification.','Created a layout engine that generates and places each symbol in an SVG document.','Wrote a reducer function for processing all edits made to the music.'],
-                          'img_name': 'mazique',
-                          'github_link': 'https://github.com/kylehench/mazique',
-                          'deployment_link': 'https://www.kylehench.com/mazique/'},
-                         {'title': 'Recipes',
-                          'desc_short': 'A Flask web app for users to store recipes',
-                          'tool_logos': ['python','sql','flask','mysql','bootstrap','ec2','linux'],
-                          'desc_long': ['Implemented user login/authentication with custom validations, password hashing with bcrypt, and session persistence with Flask session.','Stored recipes in MySQL database enabling association of users and allowing edit permission based on ownership.','Utilized MVC pattern to organize code and separate concerns.'],
-                          'img_name': '',
-                          'github_link': 'https://github.com/kylehench/recipes',
-                          'deployment_link': ''}] %}
+
+      {% set projects = [
+        {
+          'title': 'Webspace',
+          'desc_short': 'A space for taking and organizing notes.',
+          'tool_logos': ['react','python','flask','sqlalchemy','tailwind','mysql','js','html','css','linux'],
+          'desc_long': [
+          'Notes can be edited and organzied in a customizable grid layout. Notes autosave with changes.',
+          'User registration/login provided by a Flask service API with token-based authentication that can be easily implemented across multiple apps or services.',
+          'CSS animations and UI elements such as tooltips, popovers, and sync status feedback contribute to a great user experience.',
+          ],
+          'img_name': 'webspace.jpg',
+          'github_link': 'https://github.com/kylehench/webspace',
+          'deployment_link': 'https://www.kylehench.com/webspace/',
+        },
+        {
+          'title': 'Mazique',
+          'desc_short': 'Web app for writing sheet music',
+          'tool_logos': ['mongodb','express','react','nodejs','js','html','css','bootstrap','ec2','linux'],
+          'desc_long': ['Used the MERN stack to create a highly responsive web app for viewing and editing sheet music.','Defined JSON structure for song data inspired by the MusicXML specification.','Created a layout engine that generates and places each symbol in an SVG document.','Wrote a reducer function for processing all edits made to the music.'],
+          'img_name': 'mazique.png',
+          'github_link': 'https://github.com/kylehench/mazique',
+          'deployment_link': 'https://www.kylehench.com/mazique/',
+        },
+        {
+          'title': 'Recipes',
+          'desc_short': 'A Flask web app for users to store recipes',
+          'tool_logos': ['python','sql','flask','mysql','bootstrap','ec2','linux'],
+          'desc_long': ['Implemented user login/authentication with custom validations, password hashing with bcrypt, and session persistence with Flask session.','Stored recipes in MySQL database enabling association of users and allowing edit permission based on ownership.','Utilized MVC pattern to organize code and separate concerns.'],
+          'img_name': '',
+          'github_link': 'https://github.com/kylehench/recipes',
+          'deployment_link': '',
+        },
+      ] %}
+      
       <h2>Projects</h2>
       {% for project in projects %}
         <div class="flex items-end justify-between flex-wrap">
           {% if loop.index==1 %}
           <h3 class="mt-6">{{project.title}}</h3>
           {% else %}
-          <h3>{{project.title}}</h3>
+          <h3 class="">{{project.title}}</h3>
           {% endif %}
           <div class="flex items-center">
             <img class="h-6" src="./static/img/icons/code.svg" alt="">
@@ -126,7 +147,7 @@
               <div class="h-1 w-1 md:h-2 md:w-2 rounded bg-yellow"></div>
               <div class="h-1 w-1 md:h-2 md:w-2 rounded bg-green"></div>
             </div>
-            <img class="p-[1px]" src="./static/img/apps/{{project.img_name}}.png" alt="">
+            <img class="p-[1px]" src="./static/img/apps/{{project.img_name}}" alt="">
           </div>
         {% endif %}
         <div class="my-2 flex flex-wrap items-center justify-between">
