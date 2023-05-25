@@ -5,7 +5,7 @@ name = "pypi"
 
 [packages]
 flask = "*"
-livereload = "==2.5.1"
+livereload = "*"
 
 [dev-packages]
 
