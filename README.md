@@ -1,9 +1,31 @@
-# Development - set up environment
-`pipenv install flask`
+# Deployment - initial
+Python, venv, Git, Node, PM2, and Nginx should be installed.
 
-# Deployment - update server
+Install node packages
 ```
-cd [portfolio folder]
+npm i
+```
+Build css files
+```
+npm run build-css
+```
+Create Python virtual environment and activate
+```
+python3 -m venv venv
+source venv/bin/activate
+```
+Install packages
+```
+pip3 install -r requirements.txt
+```
+Start and monitor Flask server with PM2. If you want a path prefix in the url, add `--env SCRIPT_NAME=/portfolio` after gunicorn.
+```
+pm2 --name=portfolio start "cd ~/portfolio && source venv/bin/activate && gunicorn --bind 0.0.0.0:5000 wsgi:application"
+```
+
+# Deployment - update server after changes
+Navigate to `/portfolio`
+```
 git pull
 npm run build-css
 pm2 restart portfolio
