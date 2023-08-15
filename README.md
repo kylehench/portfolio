@@ -9,18 +9,13 @@ Build css files
 ```
 npm run build-css
 ```
-Create Python virtual environment and activate
+Create Python virtual environment and install packages
 ```
-python3 -m venv venv
-source venv/bin/activate
-```
-Install packages
-```
-pip3 install -r requirements.txt
+pipenv install
 ```
 Start and monitor Flask server with PM2. If you want a path prefix in the url, add `--env SCRIPT_NAME=/portfolio` after gunicorn.
 ```
-pm2 --name=portfolio start "cd ~/portfolio && source venv/bin/activate && gunicorn --bind 0.0.0.0:5000 wsgi:application"
+pm2 --name=portfolio start "cd ~/portfolio && pipenv shell && gunicorn --bind 0.0.0.0:5000 wsgi:application"
 ```
 
 # Deployment - update server after changes
