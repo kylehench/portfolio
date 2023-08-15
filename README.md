@@ -15,7 +15,7 @@ pipenv install
 ```
 Start and monitor Flask server with PM2. If you want a path prefix in the url, add `--env SCRIPT_NAME=/portfolio` after gunicorn.
 ```
-pm2 --name=portfolio start "cd ~/portfolio && pipenv shell && gunicorn --bind 0.0.0.0:5000 wsgi:application"
+pm2 --name=portfolio start "cd ~/portfolio && pipenv run gunicorn --bind 0.0.0.0:5000 wsgi:application"
 ```
 
 # Deployment - update server after changes
