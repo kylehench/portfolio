@@ -1,5 +1,5 @@
 # Deployment - initial
-Python, venv, Git, Node, PM2, and Nginx should be installed.
+Python, Git, Node, PM2, and Nginx should be installed. Pyenv recommended.
 
 Install node packages
 ```
