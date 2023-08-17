@@ -1,12 +1,15 @@
 // Navbar
 const nav = document.querySelector('nav');
-const classesScrollToggle = ['border-gray-300']
+const classesScrollTop = ['border-white']
+const classesScrollDown = ['border-gray-300']
 
 window.onscroll = () => {
   if (this.scrollY <= 10) {
-    nav.classList.remove(...classesScrollToggle)
+    nav.classList.remove(...classesScrollDown)
+    nav.classList.add(...classesScrollTop)
   } else {
-    nav.classList.add(...classesScrollToggle)
+    nav.classList.remove(...classesScrollTop)
+    nav.classList.add(...classesScrollDown)
   }
 }
 
