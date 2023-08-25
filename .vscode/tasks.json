@@ -17,7 +17,7 @@
     {
       "label": "run server",
       "type": "shell",
-      "command": "pipenv run python server.py",
+      "command": "pipenv run flask run -p 5000 --debug",
       "presentation": {
         "reveal": "always",
         "focus": false,
