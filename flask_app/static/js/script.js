@@ -1,7 +1,7 @@
 // Navbar
 const nav = document.querySelector('nav');
-const classesScrollTop = ['border-stone-50']
-const classesScrollDown = ['border-stone-300']
+const classesScrollTop = ['border-slate-50']
+const classesScrollDown = ['border-slate-300']
 
 window.onscroll = () => {
   if (this.scrollY <= 10) {
