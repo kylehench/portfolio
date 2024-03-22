@@ -20,7 +20,7 @@
         {% set pages = ({'About':'about','Projects':'projects','Experience':'experience','Contact':'contact'}) %}
         <div class="hidden md:flex">
           {% for page in pages %}
-            <a href="#{{pages[page]}}" class="px-3 font-medium transition duration-300 decoration-transparent underline underline-offset-8 decoration-2 text-white-shadow hover:text-orange hover:decoration-orange">{{page}}</a>
+            <a href="#{{pages[page]}}" class="px-3 font-medium transition duration-300 decoration-transparent underline underline-offset-8 decoration-2 hover:text-orange hover:decoration-orange ">{{page}}</a>
           {% endfor %}
         </div>
         <!-- Hamburger Icon -->
@@ -31,7 +31,7 @@
         </button>
         <!-- Mobile Menu -->
         <div class="md:hidden">
-          <div id="menu" class="absolute flex-col items-center hidden self-end py-6 mt-10 font-bold bg-white sm:w-auto sm:self-center left-6 right-6 drop-shadow-md">
+          <div id="menu" class="absolute flex-col items-center hidden self-end py-6 mt-10 font-bold bg-white sm:w-auto sm:self-center left-6 right-6 dowdrop-sha-md">
             {% for page in pages %}
               <a href="#{{pages[page]}}" class="p-3 font-medium transition duration-300 decoration-transparent underline underline-offset-8 decoration-2 hover:text-orange hover:decoration-orange" onclick="toggleMenu()">{{page}}</a>
             {% endfor %}
