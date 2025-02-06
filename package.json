@@ -17,5 +17,8 @@
   "homepage": "https://github.com/kylehench/portfolio#readme",
   "devDependencies": {
     "tailwindcss": "^3.2.4"
+  },
+  "dependencies": {
+    "portfolio": "file:"
   }
 }
