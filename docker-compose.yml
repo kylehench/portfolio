@@ -1,0 +1,18 @@
+services:
+  flask-app:
+    build: .
+    container_name: portfolio
+    # ports:
+    #   - "5000:5000"
+    networks:
+      - traefik_net
+    restart: always
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.flask.rule=Host(`localhost`)"
+      - "traefik.http.routers.flask.entrypoints=web"
+      - "traefik.http.services.flask.loadbalancer.server.port=5000"
+
+networks:
+  traefik_net:
+    external: true
