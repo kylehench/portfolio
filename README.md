@@ -25,6 +25,30 @@ git pull
 npm run build-css
 pm2 restart portfolio
 ```
+# Upgrade Python
+Update python in Pipfile and Dockerfile. Version should match.
+Refresh available Python versions
+```
+pyenv update
+```
+Install Python and pipenv
+```
+pyenv install [3.x]
+pyenv local [3.x]
+python -m pip install pipenv
+```
+Recreate pipenv environment
+```
+pipenv remove
+pipenv install
+```
+
+# Docker
+Navigate to `/portfolio`
+```
+docker build -t portfolio-flask-app .
+docker compose up -d --force-recreate
+```
 
 # Attributions
 Photo by <a href="https://unsplash.com/@szamanm?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Piotr Musioł</a> on <a href="https://unsplash.com/s/photos/silicon-valley?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
